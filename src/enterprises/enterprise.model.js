@@ -18,7 +18,7 @@ const enterpriseSchema = Schema({
         type: String,
         required: true,
     },
-    clientes: [{
+    contacts: [{
         type: String,
         required: true
     }],

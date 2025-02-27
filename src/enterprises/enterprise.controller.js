@@ -51,58 +51,46 @@ export const getEmpresa = async(req, res) => {
 
 }
 
-export const deleteEmpresa = async (req, res) => {
+export const updateEmpresa = async (req, res = response) => {
     try {
+
         const { id } = req.params;
+        const { _id, ...data } = req.body;
 
-        const categoryToDelete = await Enterprise.findById(id);
-        if (!categoryToDelete) {
-            return res.status(404).json({
-                success: false,
-                msg: "Empresa no encontrada"
-            });
-        }
-
-        const categoriaNew = await Category.findOne({name: "Deportes"})
-
-        await Publication.updateMany({ category: categoryToDelete._id }, { category: categoriaNew._id });
-
-        await Category.findByIdAndDelete(id);
+        const enterprise = await Enterprise.findByIdAndUpdate(id, data, { new: true });
 
         res.status(200).json({
             success: true,
-            msg: "Categoría eliminada correctamente y publicaciones actualizadas"
-        });
-
-    } catch (error) {
-        res.status(500).json({
-            success: false,
-            msg: "Error al eliminar la categoría",
-            error: error.message || error
-        });
-    }
-};
-
-export const updateCategory = async(req, res) => {
-    try {
-        const { id } = req.params;
-        const { _id, name, ...data} = req.body;
-
-        const category = await Category.findByIdAndUpdate(id, data, {new: true});
-
-        category.name = name;
-        await category.save(); 
-
-        res.status(200).json({
-            success: true,
-            msg: "Category actualizada exitosamente",
-            category
+            msg: 'Empresa actualizada',
+            enterprise
         })
     } catch (error) {
         res.status(500).json({
             success: false,
-            msg: "Error al actualizar la category",
-            error: error.message || error
+            msg: 'Error al actualizar la empresa',
+            error: error.message
+        })
+    }
+}
+
+export const deleteEmpresa = async (req, res) => {
+
+    const { id } = req.params;
+
+    try {
+
+        await Enterprise.findByIdAndUpdate(id, { status: false });
+
+        res.status(200).json({
+            success: true,
+            msg: 'Empresa eliminada exitosamente'
+        });
+    } catch (error) {
+        console.log("hola")
+        res.status(500).json({
+            success: false,
+            msg: 'Error al eliminar la empresa',
+            error
         })
     }
 }
