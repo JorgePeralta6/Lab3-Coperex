@@ -5,8 +5,8 @@ export const saveEmpresa = async(req, res) => {
         const data = req.body;
 
         const enterprise = new Enterprise({
-            nameE: data.nameE,
-        })
+            ...data
+        });
 
         await enterprise.save();
 
@@ -91,6 +91,64 @@ export const deleteEmpresa = async (req, res) => {
             success: false,
             msg: 'Error al eliminar la empresa',
             error
+        })
+    }
+}
+
+// Listar por A-Z, Z-A, categorias y años de trayectoria
+
+export const listAZ = async (req, res) => {
+    try {
+        const { limite = 10, desde = 0 } = req.query;
+        const query = { status: true };
+
+        const [total, enterprises] = await Promise.all([
+            Enterprise.countDocuments(query),
+            Enterprise.find(query)
+                .sort({ nameE: 1 }) // Orden ascendente (A-Z)
+                .skip(Number(desde))
+                .limit(Number(limite))
+        ])
+
+        return res.status(200).json({
+            success: true,
+            msg: "Empresas ordenadas de la forma a-z ascendente",
+            total,
+            enterprises
+        })
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            msg: "Error al obtener las empresas"
+        })
+    }
+}
+
+export const listZA = async (req, res) => {
+    try {
+        const { limite = 10, desde = 0 } = req.query;
+        const query = { status: true };
+
+        const [total, enterprises] = await Promise.all([
+            Enterprise.countDocuments(query),
+            Enterprise.find(query)
+                .sort({ nameE: -1 }) // Orden descendente (Z-A)
+                .skip(Number(desde))
+                .limit(Number(limite))
+        ])
+
+        return res.status(200).json({
+            success: true,
+            msg: "Empresas ordenadas de la forma z-a descendente",
+            total,
+            enterprises
+        })
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            msg: "Error al obtener las empresas"
         })
     }
 }
