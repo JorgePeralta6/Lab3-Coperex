@@ -105,7 +105,7 @@ export const listAZ = async (req, res) => {
         const [total, enterprises] = await Promise.all([
             Enterprise.countDocuments(query),
             Enterprise.find(query)
-                .sort({ nameE: 1 }) // Orden ascendente (A-Z)
+                .sort({ nameE: 1 })
                 .skip(Number(desde))
                 .limit(Number(limite))
         ])
@@ -133,7 +133,7 @@ export const listZA = async (req, res) => {
         const [total, enterprises] = await Promise.all([
             Enterprise.countDocuments(query),
             Enterprise.find(query)
-                .sort({ nameE: -1 }) // Orden descendente (Z-A)
+                .sort({ nameE: -1 })
                 .skip(Number(desde))
                 .limit(Number(limite))
         ])
@@ -152,3 +152,59 @@ export const listZA = async (req, res) => {
         })
     }
 }
+
+export const listCategoria = async (req, res) => {
+    try {
+        const { limite = 10, desde = 0 } = req.query;
+        const query = { status: true };
+
+        const [total, enterprises] = await Promise.all([
+            Enterprise.countDocuments(query),
+            Enterprise.find(query)
+                .sort({ category: 1 })
+                .skip(Number(desde))
+                .limit(Number(limite))
+        ]);
+
+        return res.status(200).json({
+            success: true,
+            msg: "Empresas ordenadas por categoría",
+            total,
+            enterprises
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            msg: "Error al obtener las empresas"
+        });
+    }
+};
+
+export const listAños = async (req, res) => {
+    try {
+        const { limite = 10, desde = 0 } = req.query;
+        const query = { status: true };
+
+        const [total, enterprises] = await Promise.all([
+            Enterprise.countDocuments(query),
+            Enterprise.find(query)
+                .sort({ añosT: 1 }) 
+                .skip(Number(desde))
+                .limit(Number(limite))
+        ]);
+
+        return res.status(200).json({
+            success: true,
+            msg: "Empresas ordenadas por años de trayectoria",
+            total,
+            enterprises
+        });
+
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            msg: "Error al obtener las empresas"
+        });
+    }
+};

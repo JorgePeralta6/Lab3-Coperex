@@ -8,10 +8,9 @@ const enterpriseSchema = Schema({
     nivelImpacto: {
         type: String,
         required: true,
-        unique: true
     },
     añosT: {
-        type: String,
+        type: Number,
         required: true,
     },
     category: {
