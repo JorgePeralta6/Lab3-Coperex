@@ -6,6 +6,13 @@ import fs from 'fs';
 const filePath = path.resolve('empresas.xlsx');
 
 export const generarExcel = async (req, res) => {
+
+    const dirPath = path.resolve('src', 'reporteExcel');
+    if (!fs.existsSync(dirPath)) {
+        fs.mkdirSync(dirPath, { recursive: true }); 
+    }
+    const filePath = path.join(dirPath, 'empresas.xlsx'); 
+
     try {
         const enterprises = await Enterprise.find({ status: true });
 
@@ -43,12 +50,3 @@ export const generarExcel = async (req, res) => {
     }
 };
 
-/*export const descargarExcel = async (req, res) => {
-    const filePath = path.resolve('empresas.xlsx');
-
-    if (!fs.existsSync(filePath)) {
-        return res.status(404).json({ success: false, msg: "El archivo Excel no existe" });
-    }
-
-    res.download(filePath, 'empresas.xlsx');
-};*/

@@ -1,0 +1,105 @@
+[{
+  "_id": {
+    "$oid": "67c272613e6018e8193f540e"
+  },
+  "nameE": "Banco Bam",
+  "nivelImpacto": "Banco supremo",
+  "añosT": 10,
+  "category": "Financiero",
+  "contacts": [
+    "1009-1000",
+    "banco@edu.gt",
+    "Zona 9"
+  ],
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-01T02:35:13.070Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T03:53:35.313Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c275d62f7a3105232d649e"
+  },
+  "nameE": "Arbol de fuentes de manzana",
+  "nivelImpacto": "Arboles de manzanas",
+  "añosT": 7,
+  "category": "Alimenticio",
+  "contacts": [
+    "8888-2222",
+    "arbol@edu.gt",
+    "Parque central amatitlan"
+  ],
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-01T02:49:58.969Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T02:49:58.969Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c277022f7a3105232d64a5"
+  },
+  "nameE": "Xiaomi",
+  "nivelImpacto": "Avances de tecnologia",
+  "añosT": 9,
+  "category": "Tecnologia",
+  "contacts": [
+    "2992-1221",
+    "xiaomi@edu.gt",
+    "Centro comercial Miraflores"
+  ],
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-01T02:54:58.153Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T02:54:58.153Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c2940106d46b21677ab6f8"
+  },
+  "nameE": "Samsung",
+  "nivelImpacto": "Creacion de consolas",
+  "añosT": 10,
+  "category": "Tecnologia",
+  "contacts": [
+    "9993-0002",
+    "samsung@edu.gt",
+    "Oficinas en USA"
+  ],
+  "status": true,
+  "createdAt": {
+    "$date": "2025-03-01T04:58:41.614Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T04:58:41.614Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c296b8d8c2b9a8052451a6"
+  },
+  "nameE": "Microsft",
+  "nivelImpacto": "Creacion de electronicos",
+  "añosT": 22,
+  "category": "Tecnologia",
+  "contacts": [
+    "3332-0000",
+    "xbox@edu.gt",
+    "United State"
+  ],
+  "status": false,
+  "createdAt": {
+    "$date": "2025-03-01T05:10:17.009Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T05:14:59.372Z"
+  }
+}]

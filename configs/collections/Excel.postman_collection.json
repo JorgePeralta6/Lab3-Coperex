@@ -1,0 +1,32 @@
+{
+	"info": {
+		"_postman_id": "3691e3c5-c0ce-44d7-925c-bf9f9b3eff7e",
+		"name": "Excel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37413959"
+	},
+	"item": [
+		{
+			"name": "GenerarExcel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/coperex/v1/enterprise/excel",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"coperex",
+						"v1",
+						"enterprise",
+						"excel"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

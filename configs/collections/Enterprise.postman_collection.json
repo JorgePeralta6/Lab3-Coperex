@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "e5001d7c-e5d6-4cc5-b3e1-dd72b0be91b3",
+		"name": "Enterprise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37413959"
+	},
+	"item": [
+		{
+			"name": "PostEmpresa",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MyNmFkNWFmM2FlMWJkMTY1ZjE0OTkiLCJpYXQiOjE3NDA4MDU4MDcsImV4cCI6MTc0MDgwOTQwN30.VMXXlLDjTb-hR0nQUfPPaFwrDvHxK18SzIE80cdZtpk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nameE\": \"Nintendo\",\r\n    \"nivelImpacto\": \"Juegos de consolas\",\r\n    \"añosT\": 30,\r\n    \"category\": \"Videojuegos\",\r\n    \"contacts\": [\r\n        \"3211-2922\",\r\n        \"nintendo@edu.gt\",\r\n        \"Oficinas en China\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/coperex/v1/enterprise",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"coperex",
+						"v1",
+						"enterprise"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetEmpresa",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/coperex/v1/enterprise",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"coperex",
+						"v1",
+						"enterprise"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateEmpresa",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MyNmFkNWFmM2FlMWJkMTY1ZjE0OTkiLCJpYXQiOjE3NDA4MDU4MDcsImV4cCI6MTc0MDgwOTQwN30.VMXXlLDjTb-hR0nQUfPPaFwrDvHxK18SzIE80cdZtpk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"nameE\": \"Microsft\",\r\n            \"nivelImpacto\": \"Creacion de electronicos\",\r\n            \"añosT\": 22,\r\n            \"category\": \"Tecnologia\",\r\n            \"contacts\": [\r\n                \"3332-0000\",\r\n                \"xbox@edu.gt\",\r\n                \"United State\"\r\n            ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/coperex/v1/enterprise/67c296b8d8c2b9a8052451a6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"coperex",
+						"v1",
+						"enterprise",
+						"67c296b8d8c2b9a8052451a6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteEmpresa",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2MyNmFkNWFmM2FlMWJkMTY1ZjE0OTkiLCJpYXQiOjE3NDA4MDYwODksImV4cCI6MTc0MDgwOTY4OX0.m7T9QtYkEGv4xS86axBFrG7ksKD1p3JSTU75HijRtCw",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/coperex/v1/enterprise/67c296b8d8c2b9a8052451a6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"coperex",
+						"v1",
+						"enterprise",
+						"67c296b8d8c2b9a8052451a6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AZ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/coperex/v1/enterprise/empresaAZ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"coperex",
+						"v1",
+						"enterprise",
+						"empresaAZ"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ZA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/coperex/v1/enterprise/empresaZA",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"coperex",
+						"v1",
+						"enterprise",
+						"empresaZA"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCategoria",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/coperex/v1/enterprise/empresaCategoria",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"coperex",
+						"v1",
+						"enterprise",
+						"empresaCategoria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetAños",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/coperex/v1/enterprise/empresaAnios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"coperex",
+						"v1",
+						"enterprise",
+						"empresaAnios"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { check } from "express-validator";
 import { saveEmpresa, getEmpresa, updateEmpresa, deleteEmpresa, listAZ, listZA, listCategoria, listAnios } from "./enterprise.controller.js";
-import { generarExcel, /*descargarExcel*/ } from "./enterprise.excel.js";
+import { generarExcel } from "./enterprise.excel.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { existeEnterprise } from "../helpers/db-validator.js";
 import { validarJWT } from "../middlewares/validar-jwt.js";
@@ -67,10 +67,5 @@ router.get(
     "/excel", 
     generarExcel
 )
-
-/*router.get(
-    "/dexcel",
-    descargarExcel
-)*/
 
 export default router;
