@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { check } from "express-validator";
-import { saveEmpresa, getEmpresa, updateEmpresa, deleteEmpresa, listAZ, listZA, listCategoria, listAños } from "./enterprise.controller.js";
+import { saveEmpresa, getEmpresa, updateEmpresa, deleteEmpresa, listAZ, listZA, listCategoria, listAnios } from "./enterprise.controller.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
 import { existeEnterprise } from "../helpers/db-validator.js";
 import { validarJWT } from "../middlewares/validar-jwt.js";
@@ -59,7 +59,7 @@ router.get(
 
 router.get(
     "/empresaAnios",
-    listAños
+    listAnios
 )
 
 export default router;

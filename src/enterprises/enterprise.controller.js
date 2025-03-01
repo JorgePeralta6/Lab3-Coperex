@@ -161,6 +161,7 @@ export const listCategoria = async (req, res) => {
         const [total, enterprises] = await Promise.all([
             Enterprise.countDocuments(query),
             Enterprise.find(query)
+                .select('nameE category')
                 .sort({ category: 1 })
                 .skip(Number(desde))
                 .limit(Number(limite))
@@ -181,7 +182,7 @@ export const listCategoria = async (req, res) => {
     }
 };
 
-export const listAños = async (req, res) => {
+export const listAnios = async (req, res) => {
     try {
         const { limite = 10, desde = 0 } = req.query;
         const query = { status: true };
@@ -189,7 +190,8 @@ export const listAños = async (req, res) => {
         const [total, enterprises] = await Promise.all([
             Enterprise.countDocuments(query),
             Enterprise.find(query)
-                .sort({ añosT: 1 }) 
+                .select('nameE añosT')
+                .sort({ añosT: 1 })
                 .skip(Number(desde))
                 .limit(Number(limite))
         ]);
